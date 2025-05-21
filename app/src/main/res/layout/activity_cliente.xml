@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cliente"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,7 +13,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:titleTextColor="@color/black"
+        android:titleTextColor="@color/black"
         android:background="@color/white"
         app:menu="@menu/menu_main">
     </com.google.android.material.appbar.MaterialToolbar>
@@ -31,7 +32,6 @@
         android:layout_height="wrap_content"
         app:menu="@menu/menu_nav_cliente"
         android:layout_gravity="bottom">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
