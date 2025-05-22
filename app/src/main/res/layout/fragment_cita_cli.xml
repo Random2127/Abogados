@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cliente.CitaCliFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/texto_cita_cli"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="tipo de cita"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textocontainer_cita_cli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="aqui se pondia un containerview para indicar el motivo" />
+
+    <TextView
+        android:id="@+id/textodia_cita_cli"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Elija el dia de su cita" />
+
+    <TextView
+        android:id="@+id/calendario_cita_cli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:text="Aquí iria un calendario de google" />
+
+    <Button
+        android:id="@+id/botonpedircita_cita_cli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="250dp"
+        android:text="Pedir cita" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp" />
+
+</FrameLayout>
