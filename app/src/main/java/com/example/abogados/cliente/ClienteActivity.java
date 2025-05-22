@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.abogados.R;
-import com.example.abogados.abogado.HomeAdmFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -42,7 +41,7 @@ public class ClienteActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeCliFragment()).commit();
                     return true;
                 } else if (item.getItemId() == R.id.cli_cita){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CitaCliFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoticasCliFragment()).commit();
                     return true;
                 } else if (item.getItemId() == R.id. cli_chat){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ChatCliFragment()).commit();

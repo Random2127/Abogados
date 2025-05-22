@@ -1,4 +1,4 @@
-package com.example.abogados.abogado;
+package com.example.abogados.empresa;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,13 +15,13 @@ import com.example.abogados.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class AbogadoActivity extends AppCompatActivity {
+public class EmpresaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_abogado);
+        setContentView(R.layout.activity_empresa);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity_abogado), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -42,10 +42,10 @@ public class AbogadoActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeAdmFragment()).commit();
                     return true;
                 } else if (item.getItemId() == R.id.adm_contenido){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CrearFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CrearContenidoFragment()).commit();
                     return true;
                 } else if (item.getItemId() == R.id.adm_cliente) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClienteFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RegistraClienteAdmFragment()).commit();
                     return true;
                 } else if (item.getItemId() == R.id.adm_chat){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ChatAdmFragment()).commit();

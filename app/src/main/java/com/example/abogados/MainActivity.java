@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.abogados.abogado.AbogadoActivity;
+import com.example.abogados.empresa.EmpresaActivity;
 import com.example.abogados.cliente.ClienteActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,15 +65,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (resultado.equalsIgnoreCase("abo"))
                     {
-                        pasarPantalla = new Intent(MainActivity.this, AbogadoActivity.class);
+                        pasarPantalla = new Intent(MainActivity.this, EmpresaActivity.class);
                         startActivity(pasarPantalla);
                         finish();
-
                     }
                 }
-
-
-
             }
         });
 
@@ -83,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pasarPantalla = new Intent(MainActivity.this, Registro.class);
                 startActivity(pasarPantalla);
-
             }
         });
 
