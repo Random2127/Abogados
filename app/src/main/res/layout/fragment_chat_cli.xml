@@ -1,54 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".cliente.ChatCliFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/texto_chat_cli"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Nombre y foto del abogado"
-        android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/imagenynombre_chat_cli"
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"
-        android:text="ImageView mas pillar el nombre del abogado" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="101dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="150dp"
-        android:text="Chat" />
-
-    <TextView
-        android:id="@+id/containerchat_chat_cli"
+        android:id="@+id/textonombre_chat_cli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="100dp"
-        android:text="Container que tendria un chat"
-        />
+        android:text="Nombre y foto del abogado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
 
-    <ScrollView
-        android:layout_width="300dp"
-        android:layout_height="478dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="200dp"
-        android:importantForAccessibility="no">
+    <TextView
+        android:id="@+id/imagen_chat_cli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aquí habra un imageview y el nombre del abogado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textonombre_chat_cli"
+        app:layout_constraintVertical_bias="0.063" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
-</FrameLayout>
+    <TextView
+        android:id="@+id/textochat_chat_cli"
+        android:layout_width="96dp"
+        android:layout_height="53dp"
+        android:text="Chat"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_chat_cli"
+        app:layout_constraintVertical_bias="0.165" />
+</androidx.constraintlayout.widget.ConstraintLayout>

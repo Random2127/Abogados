@@ -1,53 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".cliente.CitaCliFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/texto_cita_cli"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="tipo de cita"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textocontainer_cita_cli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="aqui se pondia un containerview para indicar el motivo" />
+        android:text="Tipo de cita"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
-        android:id="@+id/textodia_cita_cli"
-        android:layout_width="158dp"
+        android:id="@+id/observaciones_cita_cli"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:text="Elija el dia de su cita" />
+        android:layout_marginBottom="428dp"
+        android:text="observaciones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintVertical_bias="0.782" />
+
+    <EditText
+        android:id="@+id/obsrellenar_vcita_cli"
+        android:layout_width="369dp"
+        android:layout_height="157dp"
+        android:layout_marginBottom="228dp"
+        android:ems="10"
+        android:hint="Observaciones"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/observaciones_cita_cli" />
+
+    <TextView
+        android:id="@+id/diacita_cita_cli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="Elija el dia de su cita"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obsrellenar_vcita_cli"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/calendario_cita_cli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:text="Aquí iria un calendario de google" />
+        android:text="Aquí ira un google calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diacita_cita_cli" />
 
     <Button
-        android:id="@+id/botonpedircita_cita_cli"
+        android:id="@+id/botoncita_cita_cli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="250dp"
-        android:text="Pedir cita" />
+        android:layout_marginBottom="28dp"
+        android:text="Pedir cita"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toEndOf="@+id/calendario_cita_cli" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="157dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="158dp"
+        android:layout_height="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_cita_cli"
+        app:layout_constraintVertical_bias="0.054" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
