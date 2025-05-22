@@ -28,6 +28,7 @@
 
     <!-- navbar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_nav_abogado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/menu_nav_abogado"

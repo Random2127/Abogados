@@ -1,6 +1,7 @@
 package com.example.abogados;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +19,8 @@ public class Registro extends AppCompatActivity {
     protected EditText email;
     protected EditText password1;
     protected EditText password2;
-
     protected Button volver;
     protected Button aceptar;
-
     protected Intent pasraPantalla;
 
     @Override
@@ -47,7 +46,6 @@ public class Registro extends AppCompatActivity {
             public void onClick(View v) {
                 pasraPantalla = new Intent(Registro.this, MainActivity.class);
                 startActivity(pasraPantalla);
-
             }
         });
 

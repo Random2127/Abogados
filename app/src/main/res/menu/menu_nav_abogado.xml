@@ -7,11 +7,11 @@
         android:title="Home"
         android:icon="@drawable/home"/>
     <item
-        android:id="@+id/contenido"
+        android:id="@+id/adm_contenido"
         android:title="Crear_contenido"
         android:icon="@drawable/add"/>
     <item
-        android:id="@+id/cliente"
+        android:id="@+id/adm_cliente"
         android:title="Cliente"
         android:icon="@drawable/group"/>
     <item
