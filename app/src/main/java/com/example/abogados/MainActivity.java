@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected EditText correo;
     protected EditText passwd;
     protected String correoString;
-
     protected TextView registro;
     protected Button boton;
-
     protected Intent pasarPantalla;
 
     @Override
