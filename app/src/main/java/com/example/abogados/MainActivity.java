@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
     protected EditText correo;
     protected EditText passwd;
     protected String correoString;
+    protected String passwordString;
     protected TextView registro;
     protected Button boton;
     protected Intent pasarPantalla;
+    protected GestorBaseDatos gbd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +49,31 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 correoString = correo.getText().toString().trim();
-
-                // Esto será controlado por el return de rol
-
-                if (correoString.equalsIgnoreCase("adm")){
-                    pasarPantalla = new Intent(MainActivity.this, AbogadoActivity.class);
-                    startActivity(pasarPantalla);
-                    finish();
-                }else {
-                    pasarPantalla = new Intent(MainActivity.this, ClienteActivity.class);
-                    startActivity(pasarPantalla);
-                    finish();
+                passwordString = passwd.getText().toString().trim();
+                String resultado = gbd.comprobarCredenciales(correoString, passwordString, MainActivity.this);
+                if (resultado == null)
+                {
+                    Toast.makeText(MainActivity.this,"Credenciales no validas",Toast.LENGTH_SHORT).show();
                 }
+                else{
+                    if (resultado.equalsIgnoreCase("cli"))
+                    {
+                        pasarPantalla = new Intent(MainActivity.this, ClienteActivity.class);
+                        startActivity(pasarPantalla);
+                        finish();
+                    }
+                    else if (resultado.equalsIgnoreCase("abo"))
+                    {
+                        pasarPantalla = new Intent(MainActivity.this, AbogadoActivity.class);
+                        startActivity(pasarPantalla);
+                        finish();
+
+                    }
+                }
+
+
+
             }
         });
 
