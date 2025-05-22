@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected Intent pasarPantalla;
     protected GestorBaseDatos gbd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
         passwd = (EditText) findViewById(R.id.password_main);
         registro = (TextView) findViewById(R.id.registro_main);
         boton = (Button) findViewById(R.id.boton_main);
+        gbd=new GestorBaseDatos(this);
 
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 correoString = correo.getText().toString().trim();
                 passwordString = passwd.getText().toString().trim();
                 String resultado = gbd.comprobarCredenciales(correoString, passwordString, MainActivity.this);
