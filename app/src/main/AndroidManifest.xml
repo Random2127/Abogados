@@ -16,7 +16,7 @@
             android:name=".cliente.ClienteActivity"
             android:exported="false" />
         <activity
-            android:name=".abogado.AbogadoActivity"
+            android:name=".empresa.EmpresaActivity"
             android:exported="false" />
         <activity
             android:name=".Registro"

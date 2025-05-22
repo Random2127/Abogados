@@ -36,7 +36,6 @@ public class GestorBaseDatos  extends SQLiteOpenHelper {
 
     }
 
-
     public String comprobarCredenciales (String nombre, String password, Context context){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT id, email, role FROM prueba WHERE nombre= ? AND password= ?", new String[]{nombre, password});
