@@ -12,4 +12,9 @@
         android:id="@+id/cli_chat"
         android:title="Chat"
         android:icon="@drawable/chat_bubble"/>
+    <item
+        android:id="@+id/cli_quienes"
+        android:title="Quienes somos"
+        android:icon="@drawable/event"
+        />
 </menu>

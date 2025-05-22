@@ -46,6 +46,10 @@ public class ClienteActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id. cli_chat){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ChatCliFragment()).commit();
                     return true;
+                } else if (item.getItemId() ==R.id.cli_quienes) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new QuienesSomosFragment()).commit();
+                    return true;
+
                 }
 
                 return false;
