@@ -1,5 +1,7 @@
 package com.example.abogados.empresa;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -34,9 +36,12 @@ public class ChatAdmFragment extends Fragment {
 
     private final List<ChatMessage> messageList = new ArrayList<>();
 
+
     public ChatAdmFragment() {
         // Required empty public constructor
     }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -52,6 +57,9 @@ public class ChatAdmFragment extends Fragment {
         chat.setAdapter(chatAdapter);
 
         DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("chats");
+
+        SharedPreferences preferences = requireContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        String senderId = preferences.getString("nombre", "Anonymous");
 
         chatRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -80,7 +88,6 @@ public class ChatAdmFragment extends Fragment {
         send.setOnClickListener(v -> {
             String text = sendText.getText().toString().trim();
             if (!text.isEmpty()) {
-                String senderId = "testUser"; // Replace with user
                 ChatMessage msg = new ChatMessage(senderId, text, System.currentTimeMillis());
                 chatRef.push().setValue(msg);
                 sendText.setText("");

@@ -1,5 +1,7 @@
 package com.example.abogados.cliente;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -51,6 +53,9 @@ public class ChatCliFragment extends Fragment {
 
         DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("chats");
 
+        SharedPreferences preferences = requireContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        String senderId = preferences.getString("nombre", "Anonymous");
+
         chatRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -86,7 +91,6 @@ public class ChatCliFragment extends Fragment {
         send.setOnClickListener(v -> {
             String text = sendText.getText().toString().trim();
             if (!text.isEmpty()) {
-                String senderId = "testUser"; // Replace with user
                 ChatMessage msg = new ChatMessage(senderId, text, System.currentTimeMillis());
                 chatRef.push().setValue(msg);
                 sendText.setText("");
