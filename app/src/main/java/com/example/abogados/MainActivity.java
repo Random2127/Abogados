@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         registro = (TextView) findViewById(R.id.registro_main);
         boton = (Button) findViewById(R.id.boton_main);
 
+        gbd = new GestorBaseDatos(this);
+
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override

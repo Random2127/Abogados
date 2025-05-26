@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "122783353959",
+    "project_id": "abogados-aceca",
+    "storage_bucket": "abogados-aceca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122783353959:android:07d3b6c8371e99dcdd98c2",
+        "android_client_info": {
+          "package_name": "com.example.abogados"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeX8o5VovMsR5dfxf-so8EPxHhj8xlSMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
