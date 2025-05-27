@@ -3,5 +3,6 @@
 
     <item android:title="Settings" />
     <item android:title="Perfil" />
+    <item android:title="Modificar usuarios"/>
     <item android:title="Cerrar sesion" />
 </menu>

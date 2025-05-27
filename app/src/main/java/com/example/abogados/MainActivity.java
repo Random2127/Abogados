@@ -14,9 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.abogados.empresa.EmpresaActivity;
-import com.example.abogados.cliente.ClienteActivity;
-
 public class MainActivity extends AppCompatActivity {
 
 
