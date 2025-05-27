@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/cli_home"
-        android:title="Home"
+        android:id="@+id/cli_calendario"
+        android:title="Calendario"
         android:icon="@drawable/home"/>
-    <item
-        android:id="@+id/cli_cita"
-        android:title="Citas"
-        android:icon="@drawable/event"/>
     <item
         android:id="@+id/cli_chat"
         android:title="Chat"
         android:icon="@drawable/chat_bubble"/>
+    <item
+        android:id="@+id/cli_archivo"
+        android:title="Enviar archivos"
+        android:icon="@drawable/upload"/>
+    <item
+        android:id="@+id/cli_contenido"
+        android:title="Ver contenido"
+        android:icon="@drawable/description"/>
 </menu>
