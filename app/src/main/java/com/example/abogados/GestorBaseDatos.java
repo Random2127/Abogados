@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class GestorBaseDatos  extends SQLiteOpenHelper {
+public class GestorBaseDatos extends SQLiteOpenHelper {
 
 
     public GestorBaseDatos(@Nullable Context context) {
@@ -20,14 +20,10 @@ public class GestorBaseDatos  extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE prueba (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, password TEXT, email TEXT, role TEXT)");
         //'CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, apellido1 TEXT, apellido2 TEXT, dni TEXT, telefono TEXT, email TEXT, passwd TEXT, role TEXT, empresaFK INTEGER)',
-        //'CREATE TABLE IF NOT EXISTS servicio (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, titulo TEXT, dewcripcion TEXT, precio FLOAT, empresaFK NUM)',
-        //'CREATE TABLE IF NOT EXISTS cita (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, titulo TEXT, userFK INTEGER, servicioFK INTEGER, fecha TIMESTAMP, estado TEXT, notas TEXT, empresaFK INTEGER)',
-        //'CREATE TABLE IF NOT EXISTS empresa (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha_creacion TIMESTAMP)',
-        //'CREATE TABLE IF NOT EXISTS mensaje (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, desde_user INTEGER, hasta_user INTEGER, comentario TEXT, time TIMESTAMP, empresaFK INTEGER)',
-        //'CREATE TABLE IF NOT EXISTS noticia (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, titulo, url, TEXT, descripcion TEXT, subido_por (userId) INTEGER , empresaFK INTEGER)',
 
-        db.execSQL("INSERT INTO prueba VALUES(null, 'a','a','a@gmail.com','abo')");
-        db.execSQL("INSERT INTO prueba VALUES(null, 'c','c','c@gmail.com','cli')");
+        db.execSQL("INSERT INTO prueba VALUES(null, 'a','a','a@test.com','admin')");
+        db.execSQL("INSERT INTO prueba VALUES(null, 'w','w','w@test.com','worker')");
+        db.execSQL("INSERT INTO prueba VALUES(null, 'c','c','c@test.com','cliente')");
 
     }
 
@@ -36,7 +32,7 @@ public class GestorBaseDatos  extends SQLiteOpenHelper {
 
     }
 
-    public String comprobarCredenciales (String nombre, String password, Context context){
+    public String comprobarCredenciales(String nombre, String password, Context context) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT id, email, role FROM prueba WHERE nombre= ? AND password= ?", new String[]{nombre, password});
 
@@ -60,12 +56,12 @@ public class GestorBaseDatos  extends SQLiteOpenHelper {
         return null;
     }
 
-    public boolean existeUser(String nombre){
+    public boolean existeUser(String nombre) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM prueba WHERE nombre= ?", new String[]{nombre});
         boolean existe = false;
-        if(cursor != null) {
-            if(cursor.moveToFirst()){
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
                 existe = true;
             }
         }

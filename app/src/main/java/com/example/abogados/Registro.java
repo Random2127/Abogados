@@ -1,7 +1,6 @@
 package com.example.abogados;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +14,22 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Registro extends AppCompatActivity {
 
-    protected EditText usuario;
+    protected EditText nombre;
+    protected EditText apellido1;
+    protected EditText apellido2;
+    protected EditText dni;
+    protected EditText telefono;
+    protected EditText movil;
     protected EditText email;
     protected EditText password1;
     protected EditText password2;
-    protected Button volver;
-    protected Button aceptar;
-    protected Intent pasraPantalla;
+    private Button next;
+    private Button back;
+    private Button accept;
+    int currentStep = 1;
+
+    private View step1, step2, step3;
+    protected Intent pasarPantalla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +42,68 @@ public class Registro extends AppCompatActivity {
             return insets;
         });
 
-        usuario = (EditText) findViewById(R.id.nombre_registro);
-        email = (EditText) findViewById(R.id.email_registro);
-        password1 = (EditText) findViewById(R.id.password1_registro);
-        password2 = (EditText) findViewById(R.id.password2_registro);
-        volver = (Button) findViewById(R.id.volver_registro);
-        aceptar = (Button) findViewById(R.id.aceptar_registro);
+        nombre = findViewById(R.id.caja_nombre_registro);
+        apellido1 = findViewById(R.id.caja_apellido1_registro);
+        apellido2 = findViewById(R.id.caja_apellido2_registro);
+        dni = findViewById(R.id.caja_dni_registro);
+        telefono = findViewById(R.id.caja_telefono_registro);
+        movil = findViewById(R.id.caja_movil_registro);
+        email = findViewById(R.id.caja_email_registro);
+        password1 = findViewById(R.id.caja_password1_registro);
+        password2 = findViewById(R.id.caja_password2_registro);
 
-        volver.setOnClickListener(new View.OnClickListener() {
+        next = findViewById(R.id.button_next);
+        back = findViewById(R.id.button_back);
+        accept = findViewById(R.id.button_accept);
+        //"paginas" del registro
+        step1 = findViewById(R.id.step1);
+        step2 = findViewById(R.id.step2);
+        step3 = findViewById(R.id.step3);
+
+        // Muestro solo el primer paso
+        step1.setVisibility(View.VISIBLE);
+        step2.setVisibility(View.GONE);
+        step3.setVisibility(View.GONE);
+
+
+        showStep(currentStep);
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pasraPantalla = new Intent(Registro.this, MainActivity.class);
-                startActivity(pasraPantalla);
+                if(currentStep < 3){
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentStep > 1) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
             }
         });
 
-        aceptar.setOnClickListener(new View.OnClickListener() {
+        accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // MManda informaciómn a la DB para registrar usuario
-
-                // retorna a main
-
+                // Llamamos a la BD para guardar datos
             }
         });
 
+    }
 
+    // Metodo para cambiar elementos durante registro
+    private void showStep(int step) {
+        step1.setVisibility(step == 1 ? View.VISIBLE : View.GONE);
+        step2.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
+        step3.setVisibility(step == 3 ? View.VISIBLE : View.GONE);
 
+        back.setVisibility(step == 1 ? View.GONE : View.VISIBLE);
+        next.setVisibility(step < 3 ? View.VISIBLE : View.GONE);
+        accept.setVisibility(step == 3 ? View.VISIBLE : View.GONE);
     }
 }

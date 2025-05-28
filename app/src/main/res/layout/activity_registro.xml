@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,102 +8,191 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
+<FrameLayout
+    android:id="@+id/contenedor_registro"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/titulo_registro"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/step1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/nombre_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+
+        <EditText
+            android:id="@+id/caja_nombre_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Indica tu nombre"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/apellido1_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Primer apellido" />
+
+        <EditText
+            android:id="@+id/caja_apellido1_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Indica tu primer apellido"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/apellido2_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Segundo apellido" />
+
+        <EditText
+            android:id="@+id/caja_apellido2_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Indica tu segundo apellido"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/dni_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DNI número" />
+
+        <EditText
+            android:id="@+id/caja_dni_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="000000000A"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/telefono_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de telefono" />
+
+        <EditText
+            android:id="@+id/caja_telefono_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="91555001122"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/movil_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de telefono" />
+
+        <EditText
+            android:id="@+id/caja_movil_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="600123456"
+            android:inputType="text" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/step2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/email_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email" />
+
+        <EditText
+            android:id="@+id/caja_email_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Introduce un email"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/password_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de telefono" />
+
+        <EditText
+            android:id="@+id/caja_password1_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/caja_password2_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Repite contraseña"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:id="@+id/step3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="16dp"
-        android:text="Registro"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <EditText
-        android:id="@+id/nombre_registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Introduce un usuario"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_registro" />
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/email_registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Introduce un email"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_registro" />
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:visibility="visible" />
 
-    <EditText
-        android:id="@+id/password1_registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_registro" />
+        <Button
+            android:id="@+id/button_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/password2_registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Repite contraseña"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password1_registro" />
-
-    <Button
-        android:id="@+id/aceptar_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Aceptar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/volver_registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Volver"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

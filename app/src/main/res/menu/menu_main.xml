@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Settings" />
-    <item android:title="Perfil" />
-    <item android:title="Modificar usuarios"/>
-    <item android:title="Cerrar sesion" />
+    <item
+        android:id="@+id/top_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/top_profile"
+        android:title="Perfil" />
+    <item
+        android:id="@+id/top_modify"
+        android:title="Modificar usuarios"/>
+    <item
+        android:id="@+id/top_close"
+        android:title="Cerrar sesion" />
 </menu>
