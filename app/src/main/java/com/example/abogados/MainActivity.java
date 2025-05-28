@@ -2,6 +2,7 @@ package com.example.abogados;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,33 +52,25 @@ public class MainActivity extends AppCompatActivity {
                 correoString = correo.getText().toString().trim();
                 passwordString = passwd.getText().toString().trim();
                 String resultado = gbd.comprobarCredenciales(correoString, passwordString, MainActivity.this);
-                if (resultado == null)
-                {
-                    Toast.makeText(MainActivity.this,"Credenciales no validas",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if (resultado.equalsIgnoreCase("cli"))
-                    {
-                        pasarPantalla = new Intent(MainActivity.this, ClienteActivity.class);
-                        startActivity(pasarPantalla);
-                        finish();
-                    }
-                    else if (resultado.equalsIgnoreCase("abo"))
-                    {
+                if (resultado == null) {
+                    Toast.makeText(MainActivity.this, "Credenciales no validas", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (resultado.equalsIgnoreCase("admin")) {
                         pasarPantalla = new Intent(MainActivity.this, EmpresaActivity.class);
                         startActivity(pasarPantalla);
                         finish();
+                    } else if (resultado.equalsIgnoreCase("worker")) {
+                        pasarPantalla = new Intent(MainActivity.this, EmpresaActivity.class);
+                        startActivity(pasarPantalla);
+                        finish();
+                    } else if (resultado.equalsIgnoreCase("cliente")) {
+                        pasarPantalla = new Intent(MainActivity.this, ClienteActivity.class);
+                        startActivity(pasarPantalla);
+                        finish();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Credenciales no válidas", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }
-        });
-
-        // Nos lleva a la pagina de registro
-        registro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pasarPantalla = new Intent(MainActivity.this, Registro.class);
-                startActivity(pasarPantalla);
             }
         });
 
